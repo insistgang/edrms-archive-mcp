@@ -1,0 +1,184 @@
+[
+  {
+    "fileId": "F2026-WS-001",
+    "caseId": "C2026-WS-AJ01",
+    "archiveType": "立卷",
+    "category": "文书档案（立卷）",
+    "name": "关于做好2026年元旦和春节期间新冠与流感疫情防控及业务连续性保障的通知",
+    "year": 2026,
+    "attachmentsId": [10101, 10102],
+    "meta": {
+      "docNo": "华泰发〔2026〕1号",
+      "formUnit": "华泰证券股份有限公司办公室",
+      "retentionPeriod": "永久",
+      "securityClassification": "内部公开",
+      "formedDate": "2026-01-05",
+      "keywords": "疫情防控 风险防控 业务连续性 春节值班",
+      "summary": "要求各分支机构做好节日期间疫情防控、突发事件应急预案及核心交易系统连续性运维保障。"
+    },
+    "attachments": [
+      {
+        "attachId": 10101,
+        "docType": "pdf",
+        "title": "关于做好2026年元旦和春节期间新冠与流感疫情防控及业务连续性保障的通知_正文.pdf",
+        "sizeBytes": 245100,
+        "contentText": "华泰证券股份有限公司文件：各部门、各分公司、营业部：为确保2026年两节期间各项金融服务与自营投资平稳运行，现就风险防控与业务连续性通知如下：一、严格落实应急值守制度；二、确保核心交易机房电力与网络冗余；三、加强涉密文件与档案借阅审批。"
+      },
+      {
+        "attachId": 10102,
+        "docType": "excel",
+        "title": "2026年两节期间各分支机构安全巡检与风险防控值班表.xlsx",
+        "sizeBytes": 89200,
+        "contentText": "值班表包含上海总部机房、南京运营中心、深圳创新中心等27个分支机构安全负责人名单及应急联络专线。"
+      }
+    ],
+    "permissionTags": ["ROLE_PUBLIC", "DEPT_ALL", "SEC_INTERNAL"]
+  },
+  {
+    "fileId": "F2026-WS-002",
+    "caseId": "C2026-WS-AJ01",
+    "archiveType": "立卷",
+    "category": "文书档案（立卷）",
+    "name": "华泰证券2026年度全面风险管理工作计划与合规底线要求",
+    "year": 2026,
+    "attachmentsId": [10103],
+    "meta": {
+      "docNo": "华泰发〔2026〕8号",
+      "formUnit": "风险管理部",
+      "retentionPeriod": "30年",
+      "securityClassification": "机密",
+      "formedDate": "2026-02-18",
+      "keywords": "全面风险管理 合规底线 信用风险 市场风险流动性",
+      "summary": "明确2026年度全面风险预算指标、流动性风险限额及场外衍生品业务双重风控审批机制。"
+    },
+    "attachments": [
+      {
+        "attachId": 10103,
+        "docType": "word",
+        "title": "华泰证券2026年度全面风险管理工作方案.docx",
+        "sizeBytes": 512000,
+        "contentText": "风险管理部2026年度工作指导纲要：一、压降高杠杆业务敞口；二、完善极端市场行情下的量化交易熔断预案；三、落实证券基金机构合规内控新规，严守廉洁从业与保密底线。"
+      }
+    ],
+    "permissionTags": ["ROLE_RISK_MGT", "SEC_CONFIDENTIAL"]
+  },
+  {
+    "fileId": "F2026-WS-088",
+    "caseId": null,
+    "archiveType": "一文一件",
+    "category": "文书档案（一文一件）",
+    "name": "关于组织开展2026年度信息技术系统防勒索与网络安全应急演练的通知",
+    "year": 2026,
+    "attachmentsId": [20101, 20102],
+    "meta": {
+      "docNo": "华泰字〔2026〕19号",
+      "formUnit": "信息技术部",
+      "retentionPeriod": "10年",
+      "securityClassification": "内部公开",
+      "formedDate": "2026-03-12",
+      "keywords": "网络安全 防勒索 攻防演练 应急响应 数据备份",
+      "summary": "定于3月下旬组织全集团信息系统渗透与灾备恢复实战演练，检验S3存储与达梦数据库快照冷备可用性。"
+    },
+    "attachments": [
+      {
+        "attachId": 20101,
+        "docType": "pdf",
+        "title": "2026年度网络安全实战演练方案.pdf",
+        "sizeBytes": 320000,
+        "contentText": "演练重点包含信创环境浪潮服务器集群、东方通TongWeb中间件及达梦V8数据库的容灾切换流程与动态脱敏规则。"
+      },
+      {
+        "attachId": 20102,
+        "docType": "png",
+        "title": "网络安全演练组织架构及联络流程图.png",
+        "sizeBytes": 156000,
+        "contentText": "【OCR识别正文】网络安全演练应急指挥部由CTO挂帅，下设攻击组、防守组、数据恢复专家组，实行24小时轮岗机制。"
+      }
+    ],
+    "permissionTags": ["ROLE_PUBLIC", "DEPT_ALL", "SEC_INTERNAL"]
+  },
+  {
+    "fileId": "F2026-FW-012",
+    "caseId": null,
+    "archiveType": "一文一件",
+    "category": "发文（一文一件）",
+    "name": "华泰证券关于进一步加强分支机构反洗钱与客户尽职调查风险防控的通知",
+    "year": 2026,
+    "attachmentsId": [30101],
+    "meta": {
+      "docNo": "华泰发〔2026〕23号",
+      "formUnit": "法律合规部",
+      "retentionPeriod": "永久",
+      "securityClassification": "秘密",
+      "formedDate": "2026-04-10",
+      "keywords": "反洗钱 客户尽职调查 风险防控 账户穿透",
+      "summary": "针对大额交易和异常交易实施全天候实时监控预警，严格核验实际受益人身份。"
+    },
+    "attachments": [
+      {
+        "attachId": 30101,
+        "docType": "word",
+        "title": "反洗钱风险防控与客户身份识别操作指南.docx",
+        "sizeBytes": 420000,
+        "contentText": "各分公司、营业部应对高风险客户建立单独档案跟踪机制，对非居民金融账户涉税信息实施专项尽职调查。"
+      }
+    ],
+    "permissionTags": ["ROLE_COMPLIANCE", "SEC_SECRET"]
+  },
+  {
+    "fileId": "F2026-SW-034",
+    "caseId": null,
+    "archiveType": "一文一件",
+    "category": "收文（一文一件）",
+    "name": "中国证监会关于发布《证券基金经营机构合规管理办法》修订意见的通知",
+    "year": 2026,
+    "attachmentsId": [40101],
+    "meta": {
+      "docNo": "证监发〔2026〕45号",
+      "formUnit": "中国证券监督管理委员会",
+      "retentionPeriod": "永久",
+      "securityClassification": "内部公开",
+      "formedDate": "2026-05-15",
+      "keywords": "监管收文 合规管理 证券基金经营机构 制度修订",
+      "summary": "证监会最新监管文件，明确券商自营、资管、投行业务合规审查标准及全生命周期档案留痕规范。"
+    },
+    "attachments": [
+      {
+        "attachId": 40101,
+        "docType": "pdf",
+        "title": "证券基金经营机构合规管理办法（2026修订全文）.pdf",
+        "sizeBytes": 860000,
+        "contentText": "第一章总则：证券基金经营机构应当树立合规创造价值的理念，建立健全覆盖所有业务、部门、分支机构及各级人员的合规管理体系；档案部门应妥善保存所有业务决策过程文件至少20年。"
+      }
+    ],
+    "permissionTags": ["ROLE_PUBLIC", "DEPT_ALL", "SEC_INTERNAL"]
+  },
+  {
+    "fileId": "F2025-WS-099",
+    "caseId": "C2025-WS-01",
+    "archiveType": "立卷",
+    "category": "文书档案（立卷）",
+    "name": "华泰证券2025年度网络安全与数字化转型项目验收总结报告",
+    "year": 2025,
+    "attachmentsId": [50101],
+    "meta": {
+      "docNo": "华泰字〔2025〕66号",
+      "formUnit": "信息技术部",
+      "retentionPeriod": "30年",
+      "securityClassification": "内部公开",
+      "formedDate": "2025-12-28",
+      "keywords": "数字化转型 档案管理 验收总结 信创适配",
+      "summary": "全面总结2025年度信创工程、档案一体化系统及3D虚拟库房部署运行成果。"
+    },
+    "attachments": [
+      {
+        "attachId": 50101,
+        "docType": "pdf",
+        "title": "华泰证券档案数字化一期项目验收报告.pdf",
+        "sizeBytes": 670000,
+        "contentText": "一期项目实现文书档案、发文、收文单套制归档，对接泛微OA E9，支持达梦V8与银河麒麟信创底座稳定运行。"
+      }
+    ],
+    "permissionTags": ["ROLE_PUBLIC", "DEPT_ALL", "SEC_INTERNAL"]
+  }
+]

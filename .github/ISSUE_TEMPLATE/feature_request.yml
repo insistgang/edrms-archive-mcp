@@ -1,0 +1,39 @@
+name: 功能需求
+description: 登记客户新功能、范围和验收条件
+title: '[需求] '
+body:
+  - type: markdown
+    attributes:
+      value: 不上传密码、Token、客户真实数据、内网地址或未经许可的资料。
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 业务场景与使用角色
+      description: 谁在什么情况下需要什么结果？
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 范围与不做的内容
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 可验证的验收条件
+      description: 输入、预期字段、权限差异、异常及性能条件；未确认写待确认。
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依赖与批准
+      description: 门类/样本/账号/原生接口/组件/模型；敏感信息只说明获取方式。
+  - type: checkboxes
+    id: security
+    attributes:
+      label: 数据与权限
+      options:
+        - label: 已说明是否涉及新增组件、客户系统变更或数据外发，且未粘贴敏感信息
+          required: true

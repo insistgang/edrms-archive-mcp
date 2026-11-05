@@ -1,0 +1,7 @@
+# 华泰证券 EDRMS MCP 服务端可选依赖
+# 注：本项目内置 app_standalone.py，支持在信创无网络环境下纯 Python 原生零依赖运行！
+# 若现场已具备完整 Python 环境并需支持超高并发，可安装以下依赖：
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+httpx>=0.24.0
