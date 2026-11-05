@@ -51,7 +51,7 @@ python3 -m unittest discover -p 'test_*.py'
 python3 acceptance_test.py
 ```
 
-当前基线123项自动化测试、15项本地基础检查。计数随功能更新，不代表123条业务需求验收。
+当前基线129项自动化测试、15项本地基础检查。计数随功能更新，不代表业务需求全部验收。新增Dockerfile/Compose与容器CI；本机无Docker，详见部署说明和CI实际结果。年度/日期filters目前仅Mock可执行，LIVE显式拒绝未验证筛选，不能当作季度筛选已实机完成。
 
 ## 实机接入
 
@@ -128,5 +128,7 @@ python3 ask_archive.py '查询相关档案及原文要求' --mcp-url http://127.
 - [开发实施流程](docs/WORKFLOW.md)
 - [当前状态与验证边界](docs/STATUS.md)
 - [变更记录](CHANGELOG.md)
+- [Docker部署与离线/信创边界](docs/DEPLOYMENT.md)
+- [数据范围及季度筛选确认表](docs/DATA_SCOPE.md)
 
 新需求先建Issue，写清用户场景、身份、数据样本、接口变化与可验证的验收条件；实施、测试、记录和客户确认后再关闭。客户补充资料不自动上传，新增需求不等于扩大授权范围。

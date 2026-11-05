@@ -32,6 +32,7 @@ class ArchiveQueryRequest:
     archiveTypeId: Optional[str] = None
     pageIndex: int = 1
     pageSize: int = 10
+    filters: Optional[Dict[str, Any]] = None
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "ArchiveQueryRequest":
@@ -52,7 +53,8 @@ class ArchiveQueryRequest:
             query=query_str,
             archiveTypeId=data.get("archiveTypeId"),
             pageIndex=page_index,
-            pageSize=page_size
+            pageSize=page_size,
+            filters=data.get("filters")
         )
 
 
@@ -77,7 +79,18 @@ MCP_ARCHIVE_SEARCH_TOOL = {
             "query": {"type": "string", "description": "用户检索关键词或自然语言问题"},
             "archiveTypeId": {"type": "string", "description": "可选门类过滤 ID"},
             "pageIndex": {"type": "integer", "minimum": 1, "default": 1},
-            "pageSize": {"type": "integer", "minimum": 1, "maximum": 100, "default": 10}
+            "pageSize": {"type": "integer", "minimum": 1, "maximum": 100, "default": 10},
+            "filters": {
+                "type": "object", "additionalProperties": False,
+                "description": "结构化范围：目前仅Mock验证；LIVE原生字段/语法待确认，传入时明确拒绝，不静默忽略。日期为包含端点的YYYY-MM-DD。",
+                "properties": {
+                    "yearFrom": {"type": "integer", "minimum": 1, "maximum": 9999},
+                    "yearTo": {"type": "integer", "minimum": 1, "maximum": 9999},
+                    "dateField": {"type": "string", "enum": ["formedDate", "filingDate"]},
+                    "dateFrom": {"type": "string", "format": "date"},
+                    "dateTo": {"type": "string", "format": "date"}
+                }
+            }
         },
         "required": ["query"]
     }

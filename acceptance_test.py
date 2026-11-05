@@ -227,9 +227,10 @@ def local_contract_checks(results: Results, server_url: str) -> None:
         import pathlib
         core_files = ["app_standalone.py", "archive_service.py", "config.py", "edrms_client.py",
                       "models.py", "original_parser.py", "original_text.py", "model_agent.py",
-                      "live_check.py", "permission_check.py", "run_demo.py"]
+                      "live_check.py", "permission_check.py", "run_demo.py", "search_filters.py", "mcp_client.py", "ask_archive.py"]
         local_modules = {"config", "models", "edrms_client", "archive_service", "original_text",
-                         "original_parser", "model_agent", "app_standalone", "permission_check", "audit"}
+                         "original_parser", "model_agent", "app_standalone", "permission_check", "audit",
+                         "search_filters", "mcp_client"}
         violations = []
         for name in core_files:
             path = pathlib.Path(name)

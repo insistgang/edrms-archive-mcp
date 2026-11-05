@@ -1,0 +1,24 @@
+services:
+  mcp:
+    image: ${MCP_IMAGE:-edrms-archive-mcp:local}
+    build:
+      context: .
+      args:
+        PYTHON_IMAGE: ${PYTHON_IMAGE:-python:3.12-slim}
+    environment:
+      RUN_MODE: ${RUN_MODE:-LIVE}
+      EDRMS_BASE_URL: ${EDRMS_BASE_URL:-}
+      EDRMS_TIMEOUT_SECONDS: ${EDRMS_TIMEOUT_SECONDS:-8}
+      LLM_GENERATE_MSG: 'false'
+    ports:
+      - '127.0.0.1:${MCP_HOST_PORT:-8000}:8000'
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 10s

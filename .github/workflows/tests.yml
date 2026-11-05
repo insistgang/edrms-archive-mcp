@@ -22,3 +22,26 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m unittest discover -p 'test_*.py'
       - run: python acceptance_test.py
+  container-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: docker compose config --quiet
+      - run: docker build -t edrms-archive-mcp:ci .
+      - name: Start hardened Mock container
+        run: |
+          docker run -d --name edrms-smoke --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m --cap-drop ALL --security-opt no-new-privileges:true -e RUN_MODE=MOCK -p 127.0.0.1:18000:8000 edrms-archive-mcp:ci
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:18000/health >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - run: python -m scripts.container_smoke
+      - name: Inspect and stop container
+        if: always()
+        run: |
+          docker logs edrms-smoke || true
+          docker rm -f edrms-smoke || true

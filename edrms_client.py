@@ -68,7 +68,8 @@ class EdrmsClient:
         auth_header: Optional[str] = None,
         archive_type_id: Optional[str] = None,
         page_index: int = 1,
-        page_size: int = 10
+        page_size: int = 10,
+        filters: Optional[Dict[str, Any]] = None
     ) -> Tuple[List[ArchiveItem], str]:
         """
         核心检索方法：配置实机时失败直接报错，未配置时 AUTO 才使用 Mock。
@@ -77,17 +78,21 @@ class EdrmsClient:
             raise EdrmsIntegrationError("未配置 EDRMS 地址。")
         if not auth_header or not auth_header.strip():
             raise EdrmsAuthError("档案检索需要有效的 EDRMS 用户令牌。")
+        from search_filters import validate_filters
+        filters = validate_filters(filters)
         user_name, user_perms = self.resolve_user_permission_tags(auth_header)
 
         # 1. 尝试实机调用
         if self.base_url and config.RUN_MODE != "MOCK":
+            if filters:
+                raise EdrmsIntegrationError("结构化筛选尚未通过鸿翼原生字段与条件语法验证，已拒绝请求，未静默忽略条件。")
             live_items, err = self._call_live_edrms_search(query, auth_header, archive_type_id, page_index, page_size)
             if live_items is not None:
                 return live_items, "EDRMS 实机检索完成。"
             raise EdrmsIntegrationError(f"EDRMS 实机检索失败：{err}")
 
         # 2. 本地检索与权限前置过滤
-        return self._search_mock_with_permissions(query, user_name, user_perms, archive_type_id, page_index, page_size)
+        return self._search_mock_with_permissions(query, user_name, user_perms, archive_type_id, page_index, page_size, filters)
 
     def _call_live_edrms_search(
         self,
@@ -912,13 +917,17 @@ class EdrmsClient:
         user_perms: List[str],
         archive_type_id: Optional[str] = None,
         page_index: int = 1,
-        page_size: int = 10
+        page_size: int = 10,
+        filters: Optional[Dict[str, Any]] = None
     ) -> Tuple[List[ArchiveItem], str]:
         """对 Mock 数据执行关键词匹配、门类过滤与严格的权限交集过滤"""
         query_words = [w.lower() for w in query.replace("，", " ").replace("、", " ").split() if w]
         hit_records = []
+        from search_filters import matches_filters
 
         for record in self._mock_data:
+            if not matches_filters(record, filters or {}):
+                continue
             # 1. 严格权限前置过滤：无权限标签交集直接拦截
             record_perms = set(record.get("permissionTags", []))
             if record_perms and not record_perms.intersection(set(user_perms)):

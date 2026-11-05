@@ -65,7 +65,8 @@ class ArchiveRagService:
             auth_header=auth_header,
             archive_type_id=req.archiveTypeId,
             page_index=req.pageIndex,
-            page_size=req.pageSize
+            page_size=req.pageSize,
+            **({"filters": req.filters} if req.filters is not None else {})
         )
 
         # 2. 生成自然语言回答 msg

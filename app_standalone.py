@@ -324,6 +324,11 @@ class MCPRequestHandler(BaseHTTPRequestHandler):
                 return "archiveTypeId must be a string"
             if not valid_page("pageIndex", "pageSize", 10):
                 return "Invalid pagination parameter"
+            from search_filters import validate_filters
+            try:
+                validate_filters(arguments.get("filters"))
+            except ValueError as exc:
+                return str(exc)
         elif tool_name == "archive_get_detail":
             if not all(required_string(field) for field in ("archiveTypeId", "entityType", "entityId")):
                 return "archiveTypeId, entityType and entityId are required strings"
@@ -491,6 +496,10 @@ class MCPRequestHandler(BaseHTTPRequestHandler):
         if self.path in ["/mcp/archive/rag", "/api/archive/rag"]:
             if not isinstance(req_json, dict):
                 self._send_json_response(400, {"error": "JSON body must be an object"})
+                return
+            validation_error = self._validate_tool_arguments("archive_search", req_json)
+            if validation_error:
+                self._send_json_response(400, {"error": validation_error, "data": [], "msg": validation_error})
                 return
             query_req = ArchiveQueryRequest.from_dict(req_json)
             try:
